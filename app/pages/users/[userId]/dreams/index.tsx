@@ -1,7 +1,7 @@
 import { Suspense } from "react"
 import { Head, Link, usePaginatedQuery, useRouter, useParam, BlitzPage, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
 import getDreams from "app/dreams/queries/getDreams"
+import NavLayout from "../../../../core/layouts/NavLayout"
 
 const ITEMS_PER_PAGE = 100
 
@@ -65,7 +65,7 @@ const DreamsPage: BlitzPage = () => {
   )
 }
 
-DreamsPage.authenticate = true
-DreamsPage.getLayout = (page) => <Layout>{page}</Layout>
+DreamsPage.suppressFirstRenderFlicker = true
+DreamsPage.getLayout = (page) => <NavLayout>{page}</NavLayout>
 
 export default DreamsPage

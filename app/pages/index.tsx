@@ -3,6 +3,7 @@ import { Link, BlitzPage, useMutation, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import { useCurrentUser } from "app/core/hooks/useCurrentUser"
 import logout from "app/auth/mutations/logout"
+import NavLayout from "../core/layouts/NavLayout"
 
 /*
  * This file is just for a pleasant getting started page for your new app.
@@ -57,14 +58,15 @@ const Home: BlitzPage = () => {
           <div className="mx-auto max-w-7xl">
             <div className="container max-w-lg px-4 py-32 mx-auto text-left md:max-w-none md:text-center">
               <h1 className="text-5xl font-extrabold leading-10 tracking-tight text-left text-gray-900 md:text-center sm:leading-none md:text-6xl lg:text-7xl">
-                <span className="inline md:block">Start making</span>{" "}
+                <span className="inline md:block">Mora Points.</span>{" "}
                 <span className="relative mt-2 text-transparent bg-clip-text bg-gradient-to-br from-green-400 to-green-300 md:inline-block">
-                  True Impact
+                  Let&apos;s fix the world together
                 </span>
               </h1>
               <div className="mx-auto mt-5 text-gray-500 md:mt-12 md:max-w-lg md:text-center lg:text-lg">
-                Simplifying the creation of landing pages, blog pages, application pages and so much
-                more!
+                Make an impact on the most important issues.
+                <br />
+                Have fun while doing it.
               </div>
               <div className="flex flex-col items-center mt-12 text-center">
                 <span className="relative inline-flex w-full md:w-auto">
@@ -77,7 +79,7 @@ const Home: BlitzPage = () => {
                   </a>
                 </span>
                 <a href="#" className="mt-3 text-sm text-green-400">
-                  Learn More
+                  We&apos;re in early alpha! Learn More
                 </a>
               </div>
             </div>
@@ -90,6 +92,6 @@ const Home: BlitzPage = () => {
 }
 
 Home.suppressFirstRenderFlicker = true
-Home.getLayout = (page) => <Layout title="Home">{page}</Layout>
+Home.getLayout = (page) => <NavLayout title="Home">{page}</NavLayout>
 
 export default Home

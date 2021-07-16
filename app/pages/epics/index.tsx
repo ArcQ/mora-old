@@ -3,6 +3,7 @@ import Image from "next/image"
 import { Head, Link, usePaginatedQuery, useRouter, BlitzPage, Routes } from "blitz"
 import Layout from "app/core/layouts/Layout"
 import getEpics from "app/epics/queries/getEpics"
+import NavLayout from "../../core/layouts/NavLayout"
 
 const ITEMS_PER_PAGE = 100
 
@@ -97,6 +98,6 @@ const EpicsPage: BlitzPage = () => {
 }
 
 EpicsPage.authenticate = true
-EpicsPage.getLayout = (page) => <Layout>{page}</Layout>
+EpicsPage.getLayout = (page) => <NavLayout>{page}</NavLayout>
 
 export default EpicsPage
