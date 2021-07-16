@@ -4,6 +4,7 @@ import { z } from "zod"
 
 const CreateEpic = z.object({
   name: z.string(),
+  desc: z.string(),
 })
 
 export default resolver.pipe(resolver.zod(CreateEpic), resolver.authorize(), async (input) => {
