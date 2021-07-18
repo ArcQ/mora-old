@@ -4,7 +4,6 @@ import { z } from "zod"
 
 const CreateDream = z.object({
   name: z.string(),
-  userId: z.number(),
 })
 
 export default resolver.pipe(resolver.zod(CreateDream), resolver.authorize(), async (input) => {
