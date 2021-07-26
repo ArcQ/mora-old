@@ -1,8 +1,9 @@
 import { Suspense } from "react"
 import { Head, Link, useRouter, useQuery, useParam, BlitzPage, useMutation, Routes } from "blitz"
-import Layout from "app/core/layouts/Layout"
 import getEpic from "app/epics/queries/getEpic"
 import deleteEpic from "app/epics/mutations/deleteEpic"
+import NavLayout from "../../core/layouts/NavLayout"
+import { CheckCircleIcon } from "@heroicons/react/outline"
 
 export const Header = () => {
   return (
@@ -21,9 +22,12 @@ export const Header = () => {
               zero <span className="inline-block text-green-400">carbon emissions</span>
             </h2>
             <p className="text-gray-700 text-base md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-              laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+              It&apos;s the biggest mission of our lifetime.
             </p>
+            <div className="bg-green-400 mt-5 block rounded-2xl p-2 flex flex-row justify-between items-center w-64">
+              <p className="text-white">Automatically Enrolled.</p>
+              <CheckCircleIcon className="h-10 w-10 text-white" />
+            </div>
           </div>
         </div>
         <div className="flex items-center justify-center lg:w-1/2">
@@ -402,6 +406,6 @@ const ShowEpicPage: BlitzPage = () => {
 }
 
 ShowEpicPage.authenticate = true
-ShowEpicPage.getLayout = (page) => <Layout>{page}</Layout>
+ShowEpicPage.getLayout = (page) => <NavLayout>{page}</NavLayout>
 
 export default ShowEpicPage

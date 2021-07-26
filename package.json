@@ -24,10 +24,13 @@
     ]
   },
   "dependencies": {
+    "@heroicons/react": "1.0.2",
     "@prisma/client": "2.26.0",
     "autoprefixer": "10",
     "blitz": "0.38.5",
     "final-form": "4.20.2",
+    "install": "0.13.0",
+    "npm": "7.20.0",
     "postcss": "8",
     "react": "alpha",
     "react-dom": "alpha",
